@@ -42,16 +42,14 @@ export default function HomeScreen() {
           style={styles.logo}
           resizeMode="contain"
         />
-        <div style={styles.title}>
-          <div >
+        <View style={styles.title}>
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#000' }}>Mr</Text>
             <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#000' }}>TIP</Text>
-          </div>
-
+¿          </View>
+          
           <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#000' }}>Calculator</Text>
-        </div>
-
-
+        </View>
       </View>
 
       <View style={styles.resultContainer}>
@@ -71,10 +69,10 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.inputRow}>
-        <Text style={{ marginBottom: 8, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
+        <View style={{ marginBottom: 8, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
           <Text style={styles.label}>Enter </Text>
           <Text style={styles.sublabel}>your bill</Text>
-        </Text>
+        </View>
         <View style={styles.inputContainer}>
           <Text style={styles.dollarSign}>$</Text>
           <TextInput
@@ -88,11 +86,11 @@ export default function HomeScreen() {
         </View>
       </View>
       <View style={styles.tipRow}>
-        <Text style={{ marginBottom: 8, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
+        <View style={{ marginBottom: 8, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
           <Text style={styles.label}>Choose </Text>
           <Text style={styles.sublabel}>your tip</Text>
-        </Text>
-        <div style={{ width: '80%' }}>
+        </View>
+        <View style={{ width: '80%' }}>
           <View style={styles.tipRow}>
             {[10, 15, 20].map((percent) => (
               <TouchableOpacity
@@ -105,8 +103,7 @@ export default function HomeScreen() {
             ))}
           </View>
 
-
-          <View style={{ marginTop: 10, marginBottom: 16 }}>
+          <View style={{ marginTop: 2, marginBottom: 16 }}>
             <TouchableOpacity
               style={styles.customTipButton}
               onPress={() => router.push('/explore')}
@@ -114,14 +111,14 @@ export default function HomeScreen() {
               <Text style={styles.tipText}>Custom tip</Text>
             </TouchableOpacity>
           </View>
-        </div>
+        </View>
       </View>
 
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', marginTop: 20 }}>
-        <Text style={{ marginBottom: 8, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
+      <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', marginTop: 2 }}>
+        <View style={{ marginBottom: 8, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
           <Text style={styles.label}>Split </Text>
           <Text style={styles.sublabel}>the total</Text>
-        </Text>
+        </View>
 
         <View style={styles.splitContainer}>
           <TouchableOpacity
@@ -140,7 +137,7 @@ export default function HomeScreen() {
             <Text style={styles.splitText}>+</Text>
           </TouchableOpacity>
         </View>
-      </div>
+      </View>
     </View>
   );
 }
@@ -245,7 +242,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 10,
     width: '100%',
-    marginTop: 20
+    marginTop: 2
   },
   tipButton: {
     backgroundColor: '#00BFA6',
